@@ -23,11 +23,11 @@ npx expo install --fix      # fix incompatible package versions
 
 Run lint and typecheck before declaring any task done.
 
-## Navigation & Routing
+## Navigation & Project structure
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+- This project uses **React Navigation v7** (not Expo Router): each role in `src/roles/<role>/navigation/` defines its own native-stack + bottom-tab navigator, plugged in by `src/app/roleRegistry.ts`. `src/app/` is the app root, not a routes folder.
+- Code for one role stays inside `src/roles/<role>/` and may import only from `@shared/*` (never from another role). Anything used by several roles belongs in `src/shared/`.
+- Domain writes go through Supabase RPCs defined in `supabase/migrations/0001_rangernet_schema.sql`; offline writes are queued in the shared LocalStorage outbox and delivered by sync handlers registered in each role's `index.ts`.
 
 ## Building with EAS
 
