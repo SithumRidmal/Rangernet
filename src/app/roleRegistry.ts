@@ -1,10 +1,9 @@
 import type { AppRole } from '@shared/types';
 import type { RoleModule } from '@shared/types/RoleModule';
-import { rangerModule } from '../roles/ranger';
-import { parkSupervisorModule } from '../roles/park-supervisor';
-import { communityMemberModule } from '../roles/community-member';
-import { communityLiaisonOfficerModule } from '../roles/community-liaison-officer';
-import { parkManagerModule } from '../roles/park-manager';
+import { rangerModule } from '@navigation/ranger';
+import { parkSupervisorModule } from '@features/uc02-patrol-tracking';
+import { communityMemberModule, communityLiaisonOfficerModule } from '@features/uc04-human-wildlife-conflict';
+import { parkManagerModule } from '@features/uc03-analysis-reporting';
 
 export const ROLE_MODULES: Record<AppRole, RoleModule> = {
   ranger: rangerModule,

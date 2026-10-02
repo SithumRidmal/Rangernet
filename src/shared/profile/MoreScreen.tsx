@@ -8,7 +8,7 @@ import { Button, Card, Divider, ListRow, SectionHeader, StatusBadge } from '../c
 import { Avatar } from '../components/cards';
 import { useAuth } from '../auth/AuthProvider';
 import { useSync } from '../sync/SyncProvider';
-import { useSharedNavigation } from '../navigation/types';
+import { useSharedNavigation } from '@shared/navigation/types';
 import { useNotifications } from '../notifications/NotificationsProvider';
 import { ROLE_LABELS } from '../types';
 

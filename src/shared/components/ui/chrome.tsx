@@ -26,7 +26,7 @@ import { colors, radius, shadows, toneColors } from '../../theme';
 import { AppText } from './AppText';
 import { useSync } from '../../sync/SyncProvider';
 import type { SyncStatus } from '../../sync/SynchronizationService';
-import { useSharedNavigation } from '../../navigation/types';
+import { useSharedNavigation } from '@shared/navigation/types';
 import { useNotifications } from '../../notifications/NotificationsProvider';
 
 /* --------------------------------- App bar -------------------------------- */
